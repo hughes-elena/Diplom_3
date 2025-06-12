@@ -20,6 +20,7 @@ public class LoginPage extends BasePage {
     private By loginButton = By.xpath(".//button[text()='Войти']");
 
     public LoginPage(WebDriver driver) {
+
         super(driver);
     }
 
@@ -38,8 +39,8 @@ public class LoginPage extends BasePage {
 
     public boolean loginButtonIsDisplayed() {
         waitForModalToDisappear();
-        // new WebDriverWait(driver, Duration.ofSeconds(10))
-        //         .until(ExpectedConditions.visibilityOfElementLocated(loginButton));
+         new WebDriverWait(driver, Duration.ofSeconds(10))
+                 .until(ExpectedConditions.visibilityOfElementLocated(loginButton));
         try {
             return new WebDriverWait(driver, Duration.ofSeconds(10))
                     .until(ExpectedConditions.visibilityOfElementLocated(loginButton))

@@ -23,18 +23,10 @@ public class MainPageTest extends BaseTest {
     @Description("Проверка возможности перехода к разделу Начинки на главной странице")
     public void switchingToSectionTopping() {
         driver.get(MainPage.URL_PAGE);
-
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.invisibilityOfElementLocated(By.className("Modal_modal_overlay__x2ZCr")));
-
         MainPage mainPage = new MainPage(driver);
 
         mainPage.clickSectionTopping();
-        WebElement active = new WebDriverWait(driver, Duration.ofSeconds(8))
-                .until(ExpectedConditions.visibilityOfElementLocated(
-                        By.xpath(".//div[contains(@class,'current')]/span[text()='Начинки']")
-                ));
-        assertTrue("Раздел Начинки не стал активным", active.isDisplayed());
+        assertTrue("Раздел Начинки не стал активным", mainPage.isSectionActive("Начинки"));
     }
 
     @Test
@@ -42,19 +34,12 @@ public class MainPageTest extends BaseTest {
     @Description("Проверка возможности перехода к разделу Соусы на главной странице")
     public void switchingToSectionSauce() {
         driver.get(MainPage.URL_PAGE);
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.invisibilityOfElementLocated(By.className("Modal_modal_overlay__x2ZCr")));
-
         MainPage mainPage = new MainPage(driver);
 
         mainPage.clickSectionTopping(); // Прокрутка вниз
         mainPage.clickSectionSauce();
 
-        WebElement active = new WebDriverWait(driver, Duration.ofSeconds(5))
-                .until(ExpectedConditions.visibilityOfElementLocated(
-                        By.xpath(".//div[contains(@class,'current')]/span[text()='Соусы']")
-                ));
-        assertTrue("Раздел Соусы не стал активным", active.isDisplayed());
+        assertTrue("Раздел Соусы не стал активным", mainPage.isSectionActive("Соусы"));
     }
 
     @Test
@@ -62,18 +47,12 @@ public class MainPageTest extends BaseTest {
     @Description("Проверка возможности перехода к разделу Булки на главной странице")
     public void switchingToSectionBun() {
         driver.get(MainPage.URL_PAGE);
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.invisibilityOfElementLocated(By.className("Modal_modal_overlay__x2ZCr")));
-
         MainPage mainPage = new MainPage(driver);
 
         mainPage.clickSectionTopping(); // Прокрутка вниз
         mainPage.clickSectionBun();
 
-        WebElement active = new WebDriverWait(driver, Duration.ofSeconds(5))
-                .until(ExpectedConditions.visibilityOfElementLocated(
-                        By.xpath(".//div[contains(@class,'current')]/span[text()='Булки']")
-                ));
-        assertTrue("Раздел Булки не стал активным", active.isDisplayed());
+        mainPage.clickSectionBun();
+        assertTrue("Раздел Булки не стал активным", mainPage.isSectionActive("Булки"));
     }
 }

@@ -15,12 +15,8 @@ import java.time.Duration;
 public class BaseTest {
     protected WebDriver driver;
     private String browser = System.getProperty("browser", "chrome");
-    private By modalOverlay = By.className("Modal_modal_overlay__x2ZCr");
 
-    public void waitForModalToDisappear() {
-        new WebDriverWait(driver, Duration.ofSeconds(15))
-                .until(ExpectedConditions.invisibilityOfElementLocated(modalOverlay));
-    }
+
     @Before
     public void setUp() {
         if (browser.equals("yandex")) {

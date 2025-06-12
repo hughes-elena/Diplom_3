@@ -11,6 +11,7 @@ public class MainPage extends BasePage {
     public static final String URL_PAGE = "https://stellarburgers.nomoreparties.site/";
 
     public MainPage(WebDriver driver) {
+
         super(driver);
     }
     // ЛОКАТОРЫ
@@ -95,5 +96,16 @@ public class MainPage extends BasePage {
             return false;
         }
     }
-
+    @Step("Проверка активного раздела: {sectionName}")
+    public boolean isSectionActive(String sectionName) {
+        waitForModalToDisappear();
+        By activeSectionLocator = By.xpath(".//div[contains(@class,'current')]/span[text()='" + sectionName + "']");
+        try {
+            return new WebDriverWait(driver, Duration.ofSeconds(5))
+                    .until(ExpectedConditions.visibilityOfElementLocated(activeSectionLocator))
+                    .isDisplayed();
+        } catch (TimeoutException e) {
+            return false;
+        }
+    }
 }

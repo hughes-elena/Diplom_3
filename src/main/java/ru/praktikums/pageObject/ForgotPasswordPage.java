@@ -19,7 +19,7 @@ public class ForgotPasswordPage extends BasePage {
     @Step("Клик по кнопке 'Войти' на странице восстановления пароля")
     public void loginButtonClick() {
         waitForModalToDisappear();
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(15))
                 .until(ExpectedConditions.elementToBeClickable(loginButton))
                 .click();
     }

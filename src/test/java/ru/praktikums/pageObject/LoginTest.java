@@ -2,25 +2,19 @@ package ru.praktikums.pageObject;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.response.Response;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.praktikums.Data;
 import ru.praktikums.api.UserApiSteps;
 import ru.praktikums.api.UserCreateAndEditRequest;
 import ru.praktikums.api.UserLoginRequest;
-import ru.praktikums.pageObject.*;
 import ru.praktikums.BaseTest;
 
 import static org.junit.Assert.assertTrue;
 
 import com.github.javafaker.Faker; // для генерации случайных данных
 
-import java.time.Duration;
 
 public class LoginTest extends BaseTest {
 
@@ -61,7 +55,7 @@ public class LoginTest extends BaseTest {
     @DisplayName("Вход на главной странице по кнопке Войти в аккаунт")
     @Description("Проверка возможности входа в аккаунт после нажатия на кнопку Войти в аккаунт на главной странице")
     public void loginWithCreatedUser() {
-        driver.get(Data.mainURL);
+        driver.get(Data.MAIN_URL);
 
         MainPage mainPage = new MainPage(driver);
         mainPage.clickLoginButton();
@@ -79,7 +73,7 @@ public class LoginTest extends BaseTest {
     @DisplayName("Вход на главной странице по кнопке Личный кабинет")
     @Description("Проверка возможности входа в аккаунт после нажатия на кнопку Личный кабинет на главной странице")
     public void loginViaProfileButton() {
-        driver.get(Data.mainURL);
+        driver.get(Data.MAIN_URL);
 
         MainPage mainPage = new MainPage(driver);
         mainPage.clickProfileButton();
@@ -97,7 +91,7 @@ public class LoginTest extends BaseTest {
     @DisplayName("Вход со страницы регистрации")
     @Description("Проверка возможности входа в аккаунт после нажатия на кнопку Войти на странице регистрации")
     public void loginFromRegisterPage() {
-        driver.get(Data.registerURL);
+        driver.get(Data.REGISTER_URL);
 
         RegisterPage registerPage = new RegisterPage(driver);
         registerPage.loginButtonClickRegisterPage();
@@ -115,7 +109,7 @@ public class LoginTest extends BaseTest {
     @DisplayName("Вход со страницы восстановления пароля")
     @Description("Проверка возможности входа в аккаунт после нажатия на кнопку Войти на странице восстановления пароля")
     public void loginFromForgotPasswordPage() {
-        driver.get(Data.forgotPasswordURL); // или Data.forgotPasswordURL
+        driver.get(Data.FORGOT_PASSWORD_URL); // или Data.forgotPasswordURL
 
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage(driver);
         forgotPasswordPage.loginButtonClick();

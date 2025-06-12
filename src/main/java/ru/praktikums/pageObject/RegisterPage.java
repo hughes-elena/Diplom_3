@@ -12,9 +12,9 @@ import java.time.Duration;
 
 public class RegisterPage extends BasePage {
     // Имя
-    private By nameField = By.xpath("(//*[contains(@class, 'input pr-6 pl-6')]/input)[1]");
+    private By nameField = By.xpath("//label[text()='Имя']/following-sibling::input[@name='name']");
     // Email
-    private By emailField = By.xpath("(//*[contains(@class, 'input pr-6 pl-6')]/input)[2]");
+    private By emailField = By.xpath("//label[text()='Email']/following-sibling::input");;
     // Пароль
     private By passwordField = By.xpath(".//input[@type='password']");
     // Кнопка Зарегистрироваться

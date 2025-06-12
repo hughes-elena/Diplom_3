@@ -42,7 +42,7 @@ public class RegistrationTest extends BaseTest {
         password = faker.internet().password(6, 10); //от 6 до 10 символов
         String name = faker.name().username();
 
-        driver.get(Data.registerURL);
+        driver.get(Data.REGISTER_URL);
         RegisterPage registerPage = new RegisterPage(driver);
         registerPage.registration(name, email, password);
 
@@ -64,7 +64,7 @@ public class RegistrationTest extends BaseTest {
         String emailForShortPassword = faker.internet().emailAddress();
         String nameForShortPassword = faker.name().username();
 
-        driver.get(Data.registerURL);
+        driver.get(Data.REGISTER_URL);
         RegisterPage registerPage = new RegisterPage(driver);
         registerPage.registration(nameForShortPassword, emailForShortPassword, shortPassword);
 
