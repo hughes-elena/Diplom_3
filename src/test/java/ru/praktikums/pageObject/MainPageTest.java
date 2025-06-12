@@ -36,7 +36,7 @@ public class MainPageTest extends BaseTest {
         driver.get(MainPage.URL_PAGE);
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.clickSectionTopping(); // Прокрутка вниз
+       mainPage.clickSectionTopping(); // Прокрутка вниз
         mainPage.clickSectionSauce();
 
         assertTrue("Раздел Соусы не стал активным", mainPage.isSectionActive("Соусы"));
@@ -49,7 +49,7 @@ public class MainPageTest extends BaseTest {
         driver.get(MainPage.URL_PAGE);
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.clickSectionTopping(); // Прокрутка вниз
+       mainPage.clickSectionTopping(); // Прокрутка вниз
         mainPage.clickSectionBun();
 
         mainPage.clickSectionBun();
