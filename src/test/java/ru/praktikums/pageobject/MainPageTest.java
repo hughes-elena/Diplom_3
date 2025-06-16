@@ -1,18 +1,9 @@
-package ru.praktikums.pageObject;
-
-import static org.junit.Assert.*;
+package ru.praktikums.pageobject;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import ru.praktikums.pageObject.MainPage;
 import ru.praktikums.BaseTest;
-
-import java.time.Duration;
 
 import static org.junit.Assert.assertTrue;
 

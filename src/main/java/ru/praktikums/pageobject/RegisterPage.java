@@ -1,4 +1,4 @@
-package ru.praktikums.pageObject;
+package ru.praktikums.pageobject;
 
 
 import io.qameta.allure.Step;

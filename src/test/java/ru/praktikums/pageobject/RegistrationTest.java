@@ -1,4 +1,4 @@
-package ru.praktikums.pageObject;
+package ru.praktikums.pageobject;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;

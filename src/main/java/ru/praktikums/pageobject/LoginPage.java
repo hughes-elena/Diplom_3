@@ -1,4 +1,4 @@
-package ru.praktikums.pageObject;
+package ru.praktikums.pageobject;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -39,8 +39,8 @@ public class LoginPage extends BasePage {
 
     public boolean loginButtonIsDisplayed() {
         waitForModalToDisappear();
-         new WebDriverWait(driver, Duration.ofSeconds(10))
-                 .until(ExpectedConditions.visibilityOfElementLocated(loginButton));
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOfElementLocated(loginButton));
         try {
             return new WebDriverWait(driver, Duration.ofSeconds(10))
                     .until(ExpectedConditions.visibilityOfElementLocated(loginButton))

@@ -1,4 +1,4 @@
-package ru.praktikums.pageObject;
+package ru.praktikums.pageobject;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.*;
@@ -14,6 +14,7 @@ public class MainPage extends BasePage {
 
         super(driver);
     }
+
     // ЛОКАТОРЫ
     //Кнопка Войти в аккаунт
     private By loginButton = By.xpath(".//button[text()='Войти в аккаунт']");
@@ -96,6 +97,7 @@ public class MainPage extends BasePage {
             return false;
         }
     }
+
     @Step("Проверка активного раздела: {sectionName}")
     public boolean isSectionActive(String sectionName) {
         waitForModalToDisappear();
